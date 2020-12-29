@@ -1,11 +1,14 @@
 .login {
-	display: grid;
-	place-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	height: 100vh;
 	background-color: black;
 }
 .login > img {
-	width: 100%;
+	width: 200px;
+	padding-bottom: 20px;
 }
 .login > a {
 	padding: 20px;

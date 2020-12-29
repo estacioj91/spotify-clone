@@ -1,5 +1,6 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const redirectUri = "http://localhost:3000/";
+const redirectUriLocal = "https://spotify-reproduction.netlify.app/";
 const clientId = "face699fdc1448eea55cd5572d2d8efc";
 const scopes = [
 	"user-read-currently-playing",
@@ -9,6 +10,7 @@ const scopes = [
 	"user-modify-playback-state",
 ];
 export const getTokenFromUrl = () => {
+	console.log(window.location.hostname === "localhost");
 	return window.location.hash
 		.substring(1)
 		.split("&")
@@ -20,6 +22,6 @@ export const getTokenFromUrl = () => {
 		}, {});
 };
 
-export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
-	"%20"
-)}&response_type=token&show_dialog=true`;
+export const accessUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${
+	window.location.hostname === "localhost" ? redirectUri : redirectUriLocal
+}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`;
