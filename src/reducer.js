@@ -34,7 +34,7 @@ export const reducer = (state, action) => {
 				...state,
 				track: action.track,
 			};
-		case "RECENTLY_PLAYED":
+		case "SET_RECENTLY_PLAYED":
 			return {
 				...state,
 				recentlyPlayed: action.recentlyPlayed,

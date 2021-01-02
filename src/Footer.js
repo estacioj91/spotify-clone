@@ -26,19 +26,19 @@ export default function Footer() {
 				/>
 				<div className="footer__songInfo">
 					<h5>
-						{track !== "" ? track?.item.name : track?.items[0].track.name}
+						{track !== ""
+							? track?.item.name
+							: recentlyPlayed?.items[0].track.name}
 					</h5>
 					<p>
 						{track !== ""
 							? track?.item.artists
 									.map((item) => {
-										console.log(item.name);
 										return item.name;
 									})
 									.join(", ")
-							: track?.items[0].track.artists
+							: recentlyPlayed?.items[0].track.artists
 									.map((item) => {
-										console.log(item.name);
 										return item.name;
 									})
 									.join(", ")}

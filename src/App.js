@@ -45,8 +45,9 @@ function App() {
 				});
 			});
 			spotify.getMyRecentlyPlayedTracks().then((recentlyPlayed) => {
+				console.log("app", recentlyPlayed);
 				dispatch({
-					type: "RECENTLY_PLAYED",
+					type: "SET_RECENTLY_PLAYED",
 					recentlyPlayed: recentlyPlayed,
 				});
 			});
