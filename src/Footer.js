@@ -11,29 +11,37 @@ import { Grid, Slider } from "@material-ui/core";
 import { useDataLayerValue } from "./DataLayer";
 export default function Footer() {
 	const [{ track, recentlyPlayed }, dispatch] = useDataLayerValue();
-	console.log("track", track);
-	console.log("items", track?.items[0].track);
+	console.log("track", track, "recently", recentlyPlayed);
 	return (
 		<div className="footer">
 			<div className="footer__left">
 				<img
 					className="footer__albumLogo"
 					src={
-						track
-							? track?.items[0].track.album.images[0].url
-							: track?.items[0].track.album.images[0].url
+						track !== ""
+							? track?.item.album.images[0].url
+							: recentlyPlayed?.items[0].track.album.images[0].url
 					}
 					alt=""
 				/>
 				<div className="footer__songInfo">
-					<h5>{track?.items[0].track.name}</h5>
+					<h5>
+						{track !== "" ? track?.item.name : track?.items[0].track.name}
+					</h5>
 					<p>
-						{track?.items[0].track.artists
-							.map((item) => {
-								console.log(item.name);
-								return item.name;
-							})
-							.join(", ")}
+						{track !== ""
+							? track?.item.artists
+									.map((item) => {
+										console.log(item.name);
+										return item.name;
+									})
+									.join(", ")
+							: track?.items[0].track.artists
+									.map((item) => {
+										console.log(item.name);
+										return item.name;
+									})
+									.join(", ")}
 					</p>
 				</div>
 			</div>
