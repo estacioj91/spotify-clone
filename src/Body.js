@@ -26,7 +26,10 @@ const Body = ({ spotify }) => {
 					<MoreHorizIcon />
 				</div>
 				{discover_weekly?.tracks.items.map((item) => (
-					<SongRow track={item.track} />
+					<SongRow
+						key={Math.random().toString(36).substring(7)}
+						track={item.track}
+					/>
 				))}
 			</div>
 		</div>

@@ -29,6 +29,16 @@ export const reducer = (state, action) => {
 				...state,
 				discover_weekly: action.discover_weekly,
 			};
+		case "SET_CURRENTLY_PLAYING":
+			return {
+				...state,
+				track: action.track,
+			};
+		case "RECENTLY_PLAYED":
+			return {
+				...state,
+				recentlyPlayed: action.recentlyPlayed,
+			};
 		default:
 			return state;
 	}

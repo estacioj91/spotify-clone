@@ -8,35 +8,33 @@ import RepeatIcon from "@material-ui/icons/Repeat";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import VolumeDownIcon from "@material-ui/icons/VolumeDown";
 import { Grid, Slider } from "@material-ui/core";
-
+import { useDataLayerValue } from "./DataLayer";
 export default function Footer() {
+	const [{ track, recentlyPlayed }, dispatch] = useDataLayerValue();
+	console.log("track", track);
+	console.log("items", track?.items[0].track);
 	return (
 		<div className="footer">
 			<div className="footer__left">
-				{/* <img
-					className="footer__albumLogo"
-					src={item?.album.images[0].url}
-					alt={item?.name}
-				/>
-				{item ? (
-					<div className="footer__songInfo">
-						<h4>{item.name}</h4>
-						<p>{item.artists.map((artist) => artist.name).join(", ")}</p>
-					</div>
-				) : (
-					<div className="footer__songInfo">
-						<h4>No song is playing</h4>
-						<p>...</p>
-					</div>
-				)} */}
 				<img
 					className="footer__albumLogo"
-					src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Bleu_de_Gex.jpg"
+					src={
+						track
+							? track?.items[0].track.album.images[0].url
+							: track?.items[0].track.album.images[0].url
+					}
 					alt=""
 				/>
 				<div className="footer__songInfo">
-					<h4>Yea!</h4>
-					<p>Usher</p>
+					<h5>{track?.items[0].track.name}</h5>
+					<p>
+						{track?.items[0].track.artists
+							.map((item) => {
+								console.log(item.name);
+								return item.name;
+							})
+							.join(", ")}
+					</p>
 				</div>
 			</div>
 			<div className="footer__center">

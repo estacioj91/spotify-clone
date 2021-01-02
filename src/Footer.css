@@ -2,7 +2,7 @@
 	position: fixed;
 	bottom: 0;
 	height: 65px;
-	width: 96%;
+	width: 100%;
 	background-color: #282828;
 	padding: 20px;
 	display: flex;
@@ -12,13 +12,13 @@
 	flex: 0.3;
 	display: flex;
 	align-items: center;
-	color: white;
+	color: #b1b3af;
 	width: 300px;
 }
 .footer__center {
 	flex: 0.4;
 	padding: 0 100px;
-	color: white;
+	color: #b1b3af;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -27,7 +27,7 @@
 .footer__right {
 	flex: 0.3;
 	padding: 0 100px;
-	color: white;
+	color: #b1b3af;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -40,9 +40,8 @@
 	object-fit: contain;
 }
 .footer__green {
-	color: #1ed15e;
 }
-.footer__songInfo > h4 {
+.footer__songInfo > h5 {
 	margin-bottom: 5px;
 }
 .footer__songInfo > p {
@@ -54,5 +53,4 @@
 	transform: scale(1.2) !important;
 }
 .footer__right * .MuiSlider-root {
-	color: green;
 }

@@ -5,6 +5,7 @@
 	color: white;
 	background: linear-gradient(#5b5773, rgba(0, 0, 0, 1));
 	overflow-y: overlay;
+	padding-bottom: 75px;
 }
 .body::-webkit-scrollbar {
 	display: none;

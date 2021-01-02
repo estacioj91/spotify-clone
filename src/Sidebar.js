@@ -22,7 +22,10 @@ const Sidebar = () => {
 			<hr />
 			{console.log("playlist", playlists)}
 			{playlists?.items?.map((playlist) => (
-				<SidebarOption title={playlist.name} />
+				<SidebarOption
+					key={Math.random().toString(36).substring(7)}
+					title={playlist.name}
+				/>
 			))}
 		</div>
 	);

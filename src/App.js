@@ -37,6 +37,19 @@ function App() {
 					discover_weekly: response,
 				});
 			});
+			spotify.getMyCurrentPlayingTrack().then((track) => {
+				console.log("current track", track);
+				dispatch({
+					type: "SET_CURRENTLY_PLAYING",
+					track: track,
+				});
+			});
+			spotify.getMyRecentlyPlayedTracks().then((recentlyPlayed) => {
+				dispatch({
+					type: "RECENTLY_PLAYED",
+					recentlyPlayed: recentlyPlayed,
+				});
+			});
 		}
 	}, []);
 	return (
