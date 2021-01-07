@@ -39,6 +39,11 @@ export const reducer = (state, action) => {
 				...state,
 				recentlyPlayed: action.recentlyPlayed,
 			};
+		case "GET_PLAYLIST":
+			return {
+				...state,
+				getPlaylist: action.getPlaylist,
+			};
 		default:
 			return state;
 	}

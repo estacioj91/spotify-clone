@@ -31,21 +31,14 @@ function App() {
 					playlists: playlists,
 				});
 			});
-			spotify.getPlaylist("5R1lo9HpNI1uGYmk0l95Zy").then((response) => {
-				dispatch({
-					type: "SET_DISCOVER_WEEKLY",
-					discover_weekly: response,
-				});
-			});
+
 			spotify.getMyCurrentPlayingTrack().then((track) => {
-				console.log("current track", track);
 				dispatch({
 					type: "SET_CURRENTLY_PLAYING",
 					track: track,
 				});
 			});
 			spotify.getMyRecentlyPlayedTracks().then((recentlyPlayed) => {
-				console.log("app", recentlyPlayed);
 				dispatch({
 					type: "SET_RECENTLY_PLAYED",
 					recentlyPlayed: recentlyPlayed,
