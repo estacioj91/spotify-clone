@@ -8,21 +8,7 @@ import { useDataLayerValue } from "./DataLayer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const Player = ({ spotify }) => {
 	const [{ getPlaylist, playlists }, dispatch] = useDataLayerValue();
-	// useEffect(() => {
-	// 	if (playlists) {
-	// 		playlists?.items?.map((playlist) => {
-	// 			console.log("playlist", playlist.id);
-	// 			spotify.getPlaylist(playlist.id).then((getPlaylist) => {
-	// 				console.log("response of getPlayList", getPlaylist);
-	// 				dispatch({
-	// 					type: "GET_PLAYLIST",
-	// 					getPlaylist: getPlaylist,
-	// 				});
-	// 			});
-	// 		});
-	// 	}
-	// }, [playlists]);
-	console.log("fasdfsadf", playlists, getPlaylist);
+
 	return (
 		<Router>
 			<div className="player">

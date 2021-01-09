@@ -11,7 +11,6 @@ import { Grid, Slider } from "@material-ui/core";
 import { useDataLayerValue } from "./DataLayer";
 export default function Footer() {
 	const [{ track, recentlyPlayed }, dispatch] = useDataLayerValue();
-	console.log("track", track, "recently", recentlyPlayed);
 	return (
 		<div className="footer">
 			<div className="footer__left">

@@ -34,7 +34,10 @@ const Sidebar = ({ spotify }) => {
 				<strong className="sidebar__title"> PLAYLISTS</strong>
 				<hr />
 				{playlists?.items?.map((playlist) => (
-					<Link to={`/${playlist.id}`}>
+					<Link
+						key={Math.random().toString(36).substring(7)}
+						to={`/${playlist.id}`}
+					>
 						<SidebarOption
 							key={Math.random().toString(36).substring(7)}
 							title={playlist.name}
@@ -54,7 +57,7 @@ const Sidebar = ({ spotify }) => {
 				</Route>
 				{playlists?.items?.map((playlist) => {
 					return (
-						<Route path={`/${playlist.id}`}>
+						<Route key={playlist.id} path={`/${playlist.id}`}>
 							<Body
 								key={playlist.id}
 								spotify={spotify}

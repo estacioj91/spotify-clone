@@ -2,7 +2,6 @@ import React from "react";
 import "./Home.css";
 import { useDataLayerValue } from "./DataLayer";
 function Card({ images, artist, track }) {
-	// console.log(images, artist, track);
 	return (
 		<div
 			style={{
@@ -23,7 +22,7 @@ function Cards() {
 	const [{ recentlyPlayed }, dispatch] = useDataLayerValue();
 	return (
 		<div className="Home_Cards">
-			{recentlyPlayed?.items.slice(0, 8).map((item) => {
+			{recentlyPlayed?.items.slice(0, 6).map((item) => {
 				return (
 					<Card
 						key={Math.random().toString(36).substring(7)}
