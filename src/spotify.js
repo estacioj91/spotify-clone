@@ -6,6 +6,7 @@ const scopes = [
 	"user-read-currently-playing",
 	"user-read-recently-played",
 	"user-read-playback-state",
+	"user-library-read",
 	"user-top-read",
 ];
 export const getTokenFromUrl = () => {

@@ -93,7 +93,6 @@ const Body = ({ spotify, playListID }) => {
 					/>
 				))}
 			</div>
-			<h1>render</h1>
 		</div>
 	);
 };

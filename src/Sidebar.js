@@ -46,9 +46,6 @@ const Sidebar = ({ spotify }) => {
 				))}
 			</div>
 			<Switch>
-				<Route path="/playlist">
-					<Body spotify={spotify} />
-				</Route>
 				<Route path="/search">
 					<Search />
 				</Route>

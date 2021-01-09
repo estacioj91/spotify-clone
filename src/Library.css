@@ -1,0 +1,59 @@
+.library {
+	width: 100%;
+	background-color: #121212;
+	color: white;
+	height: 100vh;
+	overflow-y: overlay;
+	padding-bottom: 80px;
+}
+.library::-webkit-scrollbar {
+	display: none;
+}
+.library__items {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.library__Cards__Card {
+	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	align-items: center;
+	width: 100%;
+}
+.library__Cards__Card > img {
+	height: 190px;
+	width: 190px;
+}
+.library_Cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	flex-wrap: wrap;
+}
+.library__Cards__Card > div > h4 {
+	padding-top: 10px;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+	padding-right: 5px;
+	padding-bottom: 9px;
+}
+.library__Cards__Card > div > h6 {
+	width: 40%;
+	height: 40px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left !important;
+}
+.library__text {
+	width: 100%;
+	padding-left: 18px;
+}
+.library__items_liked {
+	width: 600px;
+}

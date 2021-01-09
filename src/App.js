@@ -44,6 +44,24 @@ function App() {
 					recentlyPlayed: recentlyPlayed,
 				});
 			});
+			spotify.getCategories().then((categories) => {
+				dispatch({
+					type: "GET_CATEGORIES",
+					categories: categories,
+				});
+			});
+			spotify.getCategoryPlaylists("toplists").then((categoriesPlaylist) => {
+				dispatch({
+					type: "GET_CATEGORIES_PLAYLIST",
+					categoriesPlaylist: categoriesPlaylist,
+				});
+			});
+			spotify.getMySavedTracks().then((savedTrack) => {
+				dispatch({
+					type: "GET_SAVED_TRACK",
+					savedTrack: savedTrack,
+				});
+			});
 		}
 	}, []);
 	return (

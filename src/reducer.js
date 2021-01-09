@@ -7,7 +7,7 @@ export const initialState = {
 	// 	"BQD2o4YSdLDq5waqHzRJC_OkiVU8Nuyb9Ht-oxjSBJd98ynhgX73ZcV5WHYC-elW-Ay1ESXS9LvGp5E7UPCHZKUzEsapHUoOSpy9bEmbyIRRPkeCAyXikn1LKMTpK7t8gqSkuU94BlKiu637LEJZaKSJb9OnwfNsiSpEEV4bI3yaGWR1",
 };
 export const reducer = (state, action) => {
-	console.log(action);
+	console.log("action:", action);
 	switch (action.type) {
 		case "SET_USER":
 			return {
@@ -44,6 +44,22 @@ export const reducer = (state, action) => {
 				...state,
 				getPlaylist: action.getPlaylist,
 			};
+		case "GET_CATEGORIES":
+			return {
+				...state,
+				categories: action.categories,
+			};
+		case "GET_CATEGORIES_PLAYLIST":
+			return {
+				...state,
+				categoriesPlaylist: action.categoriesPlaylist,
+			};
+		case "GET_SAVED_TRACK":
+			return {
+				...state,
+				savedTrack: action.savedTrack,
+			};
+
 		default:
 			return state;
 	}
