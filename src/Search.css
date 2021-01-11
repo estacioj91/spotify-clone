@@ -1,4 +1,25 @@
 .search {
-	width: 100%;
 	background-color: #121212;
+	width: 100%;
+	color: white;
+	height: 100vh;
+	overflow-y: overlay;
+	padding: 30px;
+	padding-bottom: 120px;
+}
+.search__cards {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-top: 20px;
+}
+.search__text {
+	position: relative;
+}
+.search__text > h3 {
+	position: absolute;
+	top: 10px;
+}
+.search__img {
+	border-radius: 10px;
 }

@@ -1,8 +1,11 @@
 .home {
 	background-color: #121212;
 	width: 100%;
-	padding-bottom: 75px;
-	padding-top: 75px;
+	padding: 30px;
+	height: 100vh;
+	overflow-y: overlay;
+	padding-bottom: 120px;
+	color: white;
 }
 .Home__Cards__Card {
 	display: flex;
@@ -23,7 +26,6 @@
 .Home__Cards__Card > h4 {
 	padding-top: 10px;
 	width: 100%;
-	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	text-align: center;
@@ -33,7 +35,7 @@
 .Home__Cards__Card > h5 {
 	padding-top: 5px;
 	width: 40%;
-	height: 40px;
+	height: 30px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;

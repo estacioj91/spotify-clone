@@ -5,6 +5,7 @@ import Player from "./Player";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import { useDataLayerValue } from "./DataLayer";
+import { NewReleases } from "@material-ui/icons";
 const spotify = new SpotifyWebApi();
 
 function App() {
@@ -60,6 +61,18 @@ function App() {
 				dispatch({
 					type: "GET_SAVED_TRACK",
 					savedTrack: savedTrack,
+				});
+			});
+			spotify.getNewReleases().then((newReleases) => {
+				dispatch({
+					type: "GET_NEW_RELEASES",
+					newReleases: newReleases,
+				});
+			});
+			spotify.getMyTopTracks().then((topTracks) => {
+				dispatch({
+					type: "GET_TOP_TRACKS",
+					topTracks: topTracks,
 				});
 			});
 		}

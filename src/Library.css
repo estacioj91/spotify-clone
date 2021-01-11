@@ -1,10 +1,11 @@
 .library {
 	width: 100%;
+	padding: 30px;
 	background-color: #121212;
 	color: white;
 	height: 100vh;
 	overflow-y: overlay;
-	padding-bottom: 80px;
+	padding-bottom: 75px;
 }
 .library::-webkit-scrollbar {
 	display: none;
@@ -56,4 +57,13 @@
 }
 .library__items_liked {
 	width: 600px;
+}
+.library__Cards__Card_text {
+	padding-top: 10px;
+	padding-left: 18px;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	align-items: left;
+	width: 100%;
 }

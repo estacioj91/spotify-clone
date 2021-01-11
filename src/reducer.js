@@ -59,7 +59,16 @@ export const reducer = (state, action) => {
 				...state,
 				savedTrack: action.savedTrack,
 			};
-
+		case "GET_NEW_RELEASES":
+			return {
+				...state,
+				newReleases: action.newReleases,
+			};
+		case "GET_TOP_TRACKS":
+			return {
+				...state,
+				topTracks: action.topTracks,
+			};
 		default:
 			return state;
 	}
