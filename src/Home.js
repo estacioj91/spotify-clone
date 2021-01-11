@@ -82,15 +82,19 @@ function Home() {
 				New Releases
 			</h1>
 			<Cards data={newReleases?.albums} />
-			<h1
-				style={{
-					color: "white",
-					paddingBottom: "1.5em",
-					paddingTop: "1.5em",
-				}}
-			>
-				Your Top Tracks
-			</h1>
+			{topTracks?.items.length === 0 ? (
+				""
+			) : (
+				<h1
+					style={{
+						color: "white",
+						paddingBottom: "1.5em",
+						paddingTop: "1.5em",
+					}}
+				>
+					Your Top Tracks
+				</h1>
+			)}
 			<Cards data={topTracks} />
 		</div>
 	);

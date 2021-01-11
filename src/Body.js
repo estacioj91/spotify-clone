@@ -7,10 +7,11 @@ import { useDataLayerValue } from "./DataLayer";
 import Header from "./Header";
 import SongRow from "./SongRow";
 import { useEffect } from "react";
-const Body = ({ spotify, playListID }) => {
+const Body = ({ spotify, playListID, color }) => {
 	const [{ getPlaylist, playlists }, dispatch] = useDataLayerValue();
 	var headerData = {};
 	var count = 1;
+	console.log("color", color);
 	useEffect(() => {
 		spotify.getPlaylist(playListID).then((getPlaylist) => {
 			dispatch({
@@ -19,6 +20,7 @@ const Body = ({ spotify, playListID }) => {
 			});
 		});
 	}, []);
+
 	function playlistData() {
 		playlists.items.forEach((list) => {
 			if (list.id === playListID) {
@@ -32,7 +34,10 @@ const Body = ({ spotify, playListID }) => {
 	}
 	playlistData();
 	return (
-		<div className="body">
+		<div
+			className="body"
+			style={{ background: `linear-gradient(${color}, rgba(0, 0, 0, 1))` }}
+		>
 			<Header />
 			<div className="body__info">
 				<img src={getPlaylist?.images[0].url} alt="discover weekly" />
